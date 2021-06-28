@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="menu">
+        {{#link-to "index"}}
+        <h1>
+            <em>Notes management</em>
+        </h1>
+        {{/link-to}}
+        <div class="links">
+            {{#link-to "users"}}
+            Users
+            {{/link-to}}
+            {{#link-to "folders"}}
+            Folders
+            {{/link-to}}
+            {{#link-to "notes"}}
+            Notes
+            {{/link-to}}
+        </div>
+    </div>
+    <div class="body">
+        {{outlet}}
+    </div>
+</div>

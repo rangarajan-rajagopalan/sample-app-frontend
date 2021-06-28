@@ -1,0 +1,22 @@
+<div class="jumbo">
+    <div class="right tomster"></div>
+    <h2>Folders list</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each model as |folder|}}
+            <tr>
+                <td>{{folder.folder_id}}</td>
+                <td>{{folder.folder_name}}</td>
+                <td></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

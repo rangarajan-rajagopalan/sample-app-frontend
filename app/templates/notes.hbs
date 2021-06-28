@@ -1,0 +1,26 @@
+<div class="jumbo">
+    <div class="right tomster"></div>
+    <h2>Notes list</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Folder</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each model as |note|}}
+            <tr>
+                <td>{{note.note_id}}</td>
+                <td>{{note.folder_id}}</td>
+                <td>{{note.notes_title}}</td>
+                <td>{{note.notes_description}}</td>
+                <td></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
