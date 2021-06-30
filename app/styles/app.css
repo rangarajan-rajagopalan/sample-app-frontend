@@ -94,3 +94,15 @@ th,td,table {
 th,td {
   padding: 0px 10px;
 }
+
+.title-div {
+  height: 50px;
+  margin-top: 10px;
+}
+
+.title-div > .add-btn {
+  margin-left: 200px;
+  background-color: blue;
+  color:white;
+  border-color: blue;
+}

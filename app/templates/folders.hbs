@@ -1,22 +1,43 @@
 <div class="jumbo">
     <div class="right tomster"></div>
-    <h2>Folders list</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each model as |folder|}}
-            <tr>
-                <td>{{folder.folder_id}}</td>
-                <td>{{folder.folder_name}}</td>
-                <td></td>
-            </tr>
-            {{/each}}
-        </tbody>
-    </table>
+    <div class="title-div">
+        <span>
+            {{if showAdd (if showEdit 'Edit Folder'  'Add Folder') 'Folders List'}}
+            {{search}}
+        </span>
+        <input type="button" value="{{if showAdd 'Save' 'Add'}}" class="add-btn" {{action 'onAddClick' }} />
+    </div>
+    {{#unless showAdd}}
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each model.folders as |folder|}}
+                <tr>
+                    <td>{{folder.folder_id}}</td>
+                    <td>{{folder.folder_name}}</td>
+                    <td>
+                        <input type="button" value="Edit" {{action 'onEditClick' folder}}/>
+                        <input type="button" value="Delete" {{action 'onDeleteClick' folder}}/>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    {{/unless}}
+
+    {{#if showAdd}}
+    <div>
+        <div>
+            Name: {{input type="text" valueBinding="folderName"}}
+        </div>
+    </div>
+    {{/if}}
 </div>
